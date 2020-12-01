@@ -1,0 +1,67 @@
+<div>
+    <form ngForm>
+        <table>
+            <tr>
+                <th>Strength</th>
+                <th>Dexterity</th>
+                <th>Constitution</th>
+                <th>Intelligence</th>
+                <th>Wisdom</th>
+                <th>Charisma</th>
+            </tr>
+            <tr>
+                <td>
+                    <input type="number" 
+                    min="1" 
+                    max="20" 
+                    [(ngModel)]="monster.stats.strength.value" 
+                    (change)="monster.stats.strength.getBonus($event)" name="strength">
+                </td>
+                <td>
+                    <input type="number" 
+                    min="1" 
+                    max="20" 
+                    [(ngModel)]="monster.stats.dexterity.value" 
+                    (change)="monster.stats.dexterity.getBonus($event)" name="dexterity">
+                </td>
+                <td>
+                    <input type="number" 
+                    min="1" 
+                    max="20" 
+                    [(ngModel)]="monster.stats.constitution.value" 
+                    (change)="monster.stats.constitution.getBonus($event)" name="constitution">
+                </td>
+                <td>
+                    <input type="number" 
+                    min="1" 
+                    max="20" 
+                    [(ngModel)]="monster.stats.intelligence.value" 
+                    (change)="monster.stats.intelligence.getBonus($event)" name="intelligence">
+                </td>
+                <td>
+                    <input type="number" 
+                    min="1" 
+                    max="20" 
+                    [(ngModel)]="monster.stats.wisdom.value" 
+                    (change)="monster.stats.wisdom.getBonus($event)" name="wisdom">
+                </td>
+                <td>                 
+                    <input type="number" 
+                    min="1" 
+                    max="20" 
+                    [(ngModel)]="monster.stats.charisma.value" 
+                    (change)="monster.stats.charisma.getBonus($event)" name="charisma">
+                </td>
+            </tr>
+            <tr>
+                <td>{{monster.stats.strength.bonus}}</td>
+                <td>{{monster.stats.dexterity.bonus}}</td>
+                <td>{{monster.stats.constitution.bonus}}</td>
+                <td>{{monster.stats.intelligence.bonus}}</td>
+                <td>{{monster.stats.wisdom.bonus}}</td>
+                <td>{{monster.stats.charisma.bonus}}</td>
+            </tr>
+        </table>
+    </form>
+
+</div>

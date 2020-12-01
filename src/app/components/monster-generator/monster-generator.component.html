@@ -1,0 +1,57 @@
+<div class="grid">
+    <div class="nav">My App UI</div>
+    <div class="left">
+        <app-rating-table></app-rating-table>
+    </div>
+    <div class="center">
+        <h1>Monster Generator</h1>
+        <form ngForm name="monsterForm">
+            <h2>Rating</h2>
+            <div>
+                <p>CR:{{monster.cr}}</p>
+                <p>Attack Bonus:{{monster.attackBonus}}</p>
+                <p>Health Range: {{minHealth}} - {{maxHealth}}</p>
+                <p>Damage Range: {{minDamage}} - {{maxDamage}}</p>
+            </div>
+            <div>
+                <label for="health">Health</label>
+                <input type="text" id="health" name="health"/>
+            </div>
+            <div>
+                <label for="offChallengeRating">OCR</label>
+                <select name="offChallengeRating" id="offChallengeRating" [(ngModel)]="ocrIndex"
+                    (ngModelChange)="update($event)">
+                    <option *ngFor="let cr of challengeRatings;let i = index" value="{{i}}">{{cr.displayName}}</option>
+                </select>
+            </div>
+            <div>
+                <label for="defChallengeRating">DCR</label>
+                <select name="defChallengeRating" id="defChallengeRating" [(ngModel)]="dcrIndex"
+                    (ngModelChange)="update($event)">
+                    <option *ngFor="let cr of challengeRatings;let i = index" value="{{i}}">{{cr.displayName}}</option>
+                </select>
+            </div>
+        </form>
+        <h2>Ability Scores</h2>
+        <app-abilities></app-abilities>
+        <br>
+    </div>
+    <div class="right">
+        <div>
+            <p>Raw Monster Data:</p>
+            {{monster | json}}
+        </div>
+
+        <div>
+            <p>cr index: {{crIndex}}</p>
+            <p>ocr index: {{ocrIndex}}</p>
+            <p>dcr index: {{dcrIndex}}</p>
+        </div>
+
+        <div>
+            <p>challengeRatings</p>
+            {{challengeRatings | json}}
+        </div>
+    </div>
+    <div class="footer"></div>
+</div>

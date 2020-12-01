@@ -1,0 +1,13 @@
+.grid{
+    display: grid;
+    grid-template-columns: 2fr 5fr 2fr;
+    grid-template-rows: 60px 1fr 150px;
+    grid-template-rows: 1fr;
+    height: 100%;
+    grid-gap: 8px;
+}
+
+.content{
+    background-color: blue;
+    grid-column-start: 2;
+}

@@ -1,0 +1,16 @@
+<div>
+    <table>
+        <tr>
+            <th>index</th>
+            <th>id</th>
+            <th>name</th>
+            <th>Proficiency Bonus</th>
+        </tr>
+        <tr *ngFor="let rating of challengeRatings; let i = index" (onCreate)="update()">
+            <td>{{i}}</td>
+            <td>{{rating.id}}</td>
+            <td>{{rating.displayName}}</td>
+            <td>{{rating.proficiencyBonus}}</td>
+        </tr>
+    </table>
+</div>
